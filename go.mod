@@ -1,6 +1,6 @@
 module github.com/aileron-projects/go-fastmatch
 
-go 1.27rc2
+go 1.26
 
 require github.com/aileron-projects/go-tester v0.0.0-20260805021113-17dd56ac98f3
 
