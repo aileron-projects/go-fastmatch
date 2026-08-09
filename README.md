@@ -56,7 +56,7 @@ Architecture (Using QEMU on linux):
 
 ### Syntax
 
-The syntax is very similar with standard package [path.Match](https://pkg.go.dev/path#Match) and [filepath.Match](https://pkg.go.dev/path/filepath#Match).
+The syntax is very similar with standard [path.Match](https://pkg.go.dev/path#Match) and [filepath.Match](https://pkg.go.dev/path/filepath#Match).
 
 ```txt
 pattern:
@@ -64,7 +64,7 @@ pattern:
 term:
     '*'         matches any sequence of characters
     '?'         matches any single character
-    c           matches character c (c != '*', '?')
+    c           matches character c (c != '*', '?', '\\')
     '\\' c      matches character c
 ```
 
@@ -80,7 +80,7 @@ fastmatch.Match(pattern, `Hello world ??`) // false
 
 ### Special character escape
 
-Use `\` to escape special characters `*`, `?`.
+Use `\` to escape special characters `*`, `?` and `\`.
 
 ```go
 pattern := `Hello \*!`

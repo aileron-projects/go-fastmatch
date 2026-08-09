@@ -20,7 +20,7 @@ var ErrBadPattern = errors.New("go-fastmatch/fastmatch: bad pattern")
 //	term:
 //		'*'         matches any sequence of characters
 //		'?'         matches any single character
-//		c           matches character c (c != '*', '?')
+//		c           matches character c (c != '*', '?', '\\')
 //		'\\' c      matches character c
 func Match(pattern, str string) (bool, error) {
 	if countByteRight(pattern, '\\')%2 == 1 {

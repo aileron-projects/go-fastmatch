@@ -25,3 +25,19 @@ func ExampleMatch_escape() {
 	// false <nil>
 	// true <nil>
 }
+
+func ExampleMatch_escapeAll() {
+	fmt.Println(fastmatch.Match(`\*`, `*`))     // true
+	fmt.Println(fastmatch.Match(`\*`, `hello`)) // false
+	fmt.Println(fastmatch.Match(`\?`, `?`))     // true
+	fmt.Println(fastmatch.Match(`\?`, `x`))     // false
+	fmt.Println(fastmatch.Match(`\\`, `\`))     // true
+	fmt.Println(fastmatch.Match(`\\`, `\\`))    // false
+	// Output:
+	// true <nil>
+	// false <nil>
+	// true <nil>
+	// false <nil>
+	// true <nil>
+	// false <nil>
+}
