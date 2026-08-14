@@ -1,18 +1,20 @@
-# go-fastmatch
-
-**Simple and fast text pattern matching library for Go.**
+<!-- markdownlint-disable MD033 MD041 -->
 
 <div align="center">
 
-[![GoDoc](https://godoc.org/github.com/aileron-projects/go-fastmatch?status.svg)](http://godoc.org/github.com/aileron-projects/go-fastmatch)
-[![Test](https://github.com/aileron-projects/go-fastmatch/actions/workflows/test.yaml/badge.svg?branch=main)](https://github.com/aileron-projects/go-fastmatch/actions/workflows/test.yaml?query=branch%3Amain)
-[![License](https://img.shields.io/badge/License-Apache%202.0-yellow.svg)](./LICENSE)
+[![Release](https://img.shields.io/github/v/release/aileron-projects/go-fastmatch?sort=semver)](https://github.com/aileron-projects/go-fastmatch/releases)
+[![Reference](https://pkg.go.dev/badge/github.com/aileron-projects/go-fastmatch.svg)](https://pkg.go.dev/github.com/aileron-projects/go-fastmatch)
+[![DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/aileron-projects/go-fastmatch)
+[![Test](https://github.com/aileron-projects/go-fastmatch/actions/workflows/test.yaml/badge.svg)](https://github.com/aileron-projects/go/actions/workflows/test.yaml)
 
-[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/aileron-projects/go-fastmatch)
-[![OpenSourceInsight](https://badgen.net/badge/open%2Fsource%2F/insight/cyan)](https://deps.dev/go/github.com%2Faileron-projects%2Fgo-fastmatch)
-[![OSS Insight](https://badgen.net/badge/OSS/Insight/orange)](https://ossinsight.io/analyze/aileron-projects/go-fastmatch)
+[![Insights](https://badgen.net/badge/Insights/open%2Fsource%2Finsights/cyan)](https://deps.dev/go/github.com%2Faileron-projects%2Fgo-fastmatch)
+[![Insights](https://badgen.net/badge/Insights/OSS%2FInsight/orange)](https://ossinsight.io/analyze/aileron-projects/go-fastmatch)
 
 </div>
+
+# go-fastmatch
+
+**Simple and fast text pattern matching library for Go.**
 
 ## Features
 
@@ -26,33 +28,7 @@ Why we need simple & fast pattern matcher?
 - Standard [filepath.Match](https://pkg.go.dev/path/filepath#Match) is **specific** for file path matching
 - Standard [regexp](https://pkg.go.dev/regexp) is for fully featured pattern matching but **slow**
 
-## Tested Environments
-
-Operating System:
-
-- `Linux`: [ubuntu-latest](https://github.com/actions/runner-images)
-- `Windows`: [windows-latest](https://github.com/actions/runner-images)
-- `macOS`: [macos-latest](https://github.com/actions/runner-images)
-
-Architecture (Using QEMU on linux):
-
-- x86: `amd64`, `386`
-- arm: `arm/v5`, `arm/v6`, `arm/v7`, `arm64`
-- risc: `riscv64`, `loong64`
-- ppc: `ppc64`, `ppc64le`
-- mips: `mips`, `mips64`, `mips64le`, `mipsle`
-- ibm: `s390x`
-
-## Release Cycle
-
-- Releases are made as needed.
-- [Semantic Versioning](https://semver.org/) `vX.Y.Z` is used.
-
-## License
-
-[Apache-2.0](LICENSE)
-
-## Usage
+## Usages
 
 ### Syntax
 
@@ -89,7 +65,12 @@ fastmatch.Match(pattern, `Hello world !!`) // false
 fastmatch.Match(pattern, `Hello *!`)       // true
 ```
 
-## Benchmark
+## Docs & Examples
+
+- GoDoc: <https://pkg.go.dev/github.com/aileron-projects/go-fastmatch>
+- Examples: [example_test.go](./example_test.go)
+
+## Benchmarks
 
 Used pattern and match string are:
 
@@ -121,3 +102,8 @@ BenchmarkFastMatch-8       1796689    658.6 ns/op   0 B/op   0 allocs/op ★
 BenchmarkPathMatch-8        574101   2309.0 ns/op   0 B/op   0 allocs/op
 BenchmarkFilepathMatch-8    722451   1913.0 ns/op   0 B/op   0 allocs/op
 ```
+
+## References
+
+- [path#Match](https://pkg.go.dev/path#Match)
+- [path/filepath#Match](https://pkg.go.dev/path/filepath#Match)
